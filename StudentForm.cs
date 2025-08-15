@@ -4,8 +4,18 @@ namespace WinFormsApp1
     {
         public StudentForm()
         {
+            StudentServices studentServices=new StudentServices();
+            studentServices.GetAllArr();
+            GenericExampleWrap();
             InitializeComponent();
             InitalizeFormComponents();
+        }
+
+        private static void GenericExampleWrap()
+        {
+            GenericClassExample<string> genericClassExample = new GenericClassExample<string>();
+            genericClassExample.SetNum("Hello World!");
+            genericClassExample.GetNum();
         }
 
         private void InitalizeFormComponents()
@@ -74,8 +84,9 @@ namespace WinFormsApp1
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
+            txtFirstName.Clear();
+            txtLastName.Clear();
+
             txtFirstName.Focus();
         }
     }

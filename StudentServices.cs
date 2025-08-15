@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1
 {
-    internal class StudentServices
+    public class StudentServices
     {
-        //string[] courses=new string[] { }
+        public string[] arr= {};
+
+        public string[] GetAllArr()
+        {
+            if (arr==null || arr.Length == 0)
+            {
+                return new string[] { "No data found prakash" };
+                
+            }
+            return arr;
+        }
+
     }
 }
