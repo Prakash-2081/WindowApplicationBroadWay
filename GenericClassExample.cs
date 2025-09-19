@@ -4,19 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1
+namespace Demo.Desktop
 {
-    public class GenericClassExample<T>
+    public class GenericClassExample
     {
-        public T Num;
-        
-        public T GetNum()
+        private readonly string[] _arr;
+        public GenericClassExample(int size)
         {
-            return Num;
+            _arr = new string[size];
         }
-        public void SetNum(T Num)
+        public string GetNum(int index)
         {
-            this.Num=Num;
+            return _arr[index];
+        }
+        public void SetNum(int index,string val)
+        {
+            _arr[index] = val;
         }
     }
 }
